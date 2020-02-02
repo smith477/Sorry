@@ -35,34 +35,53 @@
             android:textAlignment="center"
             android:textColor="@android:color/black"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_start_timer"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/btn_start_timer"
+                android:layout_marginTop="20dip"
+                android:background="@color/colorAccent"
+                android:text="start"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_get_code"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="@color/colorAccent"
+                android:text="Get code"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
         <Button
-            android:id="@+id/btn_get_code"
+            android:id="@+id/btn_sign_out"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/sign_out"
             android:layout_marginTop="20dip"
             android:background="@color/colorAccent"
-            android:text="Get code"
+            android:text="sign out"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/btn_show_evidence"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/sign_out"
             android:layout_marginTop="20dip"
             android:background="@color/colorAccent"
             android:text="show evidence"
-            android:textColor="@android:color/black"
-            android:layout_above="@+id/sign_out"/>
-
-        <Button
-            android:id="@+id/btn_sign_out"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:background="@color/colorAccent"
-            android:text="sign out"
-            android:textColor="@android:color/black"
-            android:layout_above="@+id/sign_out"/>
+            android:textColor="@android:color/black" />
 
     </LinearLayout>
 

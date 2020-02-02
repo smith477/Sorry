@@ -36,7 +36,7 @@ import martin.sms.Student.ProfileActivityStudent;
 public class ProfileActivityProfessor extends AppCompatActivity {
 
     private TextView tvCode, tvTimer;
-    private Button btnGetCode, btnShowEvidence, btnSignOut;
+    private Button btnGetCode, btnShowEvidence, btnSignOut, btnStartTimer;
     private FirebaseAuth auth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseAuth.AuthStateListener authListener;
@@ -55,6 +55,7 @@ public class ProfileActivityProfessor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_professor);
+
 
         auth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -84,13 +85,15 @@ public class ProfileActivityProfessor extends AppCompatActivity {
         btnGetCode = (Button)findViewById(R.id.btn_get_code);
         btnShowEvidence = (Button)findViewById(R.id.btn_show_evidence);
         btnSignOut = (Button)findViewById(R.id.btn_sign_out);
+        btnStartTimer = (Button) findViewById(R.id.btn_start_timer);
+        btnStartTimer.setEnabled(false);
 
         btnGetCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 randomString = getRandomString(10);
                 tvCode.setText(randomString);
-                reverseTimer(30, tvTimer);
+                //reverseTimer(30, tvTimer); //Ovo treba da se veze za neko dugme "Start"
 
                 myRef.child("subjects")
                         .child(subjectID)
@@ -107,9 +110,22 @@ public class ProfileActivityProfessor extends AppCompatActivity {
                         .child("longitude")
                         .setValue(longitude);
 
-                btnGetCode.setClickable(false);
+                btnGetCode.setEnabled(false);
+                btnStartTimer.setEnabled(true);
             }
         });
+
+        btnStartTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                reverseTimer(30, tvTimer); //Ovo treba da se veze za neko dugme "Start"
+                btnStartTimer.setEnabled(false);
+
+            }
+        });
+
+
 
         btnShowEvidence.setOnClickListener(new View.OnClickListener() {
             @Override

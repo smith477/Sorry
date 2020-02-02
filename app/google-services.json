@@ -1,52 +1,45 @@
 {
   "project_info": {
-    "project_number": "1021619331792",
-    "firebase_url": "https://sms-sorry.firebaseio.com",
-    "project_id": "sms-sorry",
-    "storage_bucket": "sms-sorry.appspot.com"
+    "project_number": "165353705806",
+    "firebase_url": "https://sms-sorry-88303.firebaseio.com",
+    "project_id": "sms-sorry-88303",
+    "storage_bucket": "sms-sorry-88303.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1021619331792:android:a70acb16dcc31ea6",
+        "mobilesdk_app_id": "1:165353705806:android:027fd77ed7cb478c20ce1f",
         "android_client_info": {
           "package_name": "martin.sms"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1021619331792-t3nuuh8pur8p11s19kvm9dfomh894784.apps.googleusercontent.com",
+          "client_id": "165353705806-o968drmr4mk8udu2rvruph10rihoo3kn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "martin.sms",
-            "certificate_hash": "7c363354bd3ae38b1043f983edaeb88533de6bc3"
+            "certificate_hash": "88cd180a21e3ac55ad3c4143fb7d1f0a0a37eb33"
           }
         },
         {
-          "client_id": "1021619331792-6tv5giidj02sjtkku3f49e33uqiqa080.apps.googleusercontent.com",
+          "client_id": "165353705806-97qi5ai28e4o7r91nmv5cmsm8tsk1dak.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDrqiKYDM8bKaeLhoKYtIHFQhmsOHS8398"
+          "current_key": "AIzaSyCrWwXJtsHE0RezaJfArU3SA6_J2pTltM8"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1021619331792-6tv5giidj02sjtkku3f49e33uqiqa080.apps.googleusercontent.com",
+              "client_id": "165353705806-97qi5ai28e4o7r91nmv5cmsm8tsk1dak.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

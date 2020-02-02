@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.AddSubject"
+    android:background="@drawable/pozadina2">
+
+    <EditText
+        android:id="@+id/sifra_predmeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Subject number"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/naziv_predmeta"/>
+
+    <EditText
+        android:id="@+id/naziv_predmeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Subject name"
+        android:layout_marginBottom="10dp"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/fond_casova"/>
+
+    <EditText
+        android:id="@+id/fond_casova"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Max. number of classes"
+        android:layout_marginBottom="10dp"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/add_subject"/>
+
+    <Button
+        android:id="@+id/add_subject"
+        style="?android:textAppearanceSmall"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="add subject"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="456dp"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.AddSubjectToStudent"
+    android:background="@drawable/pozadina2">
+
+
+    <EditText
+        android:id="@+id/et_subject_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Subject name"
+        android:layout_marginBottom="10dp"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/btn_add_subject"/>
+
+    <Button
+        android:id="@+id/btn_add_subject"
+        style="?android:textAppearanceSmall"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text= "add"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="312dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btn_delete_subject"
+        android:layout_alignStart="@+id/btn_delete_subject" />
+
+
+    <Button
+        android:id="@+id/btn_delete_subject"
+        style="?android:textAppearanceSmall"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="remove"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="456dp"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

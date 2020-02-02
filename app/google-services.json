@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1021619331792",
+    "firebase_url": "https://sms-sorry.firebaseio.com",
+    "project_id": "sms-sorry",
+    "storage_bucket": "sms-sorry.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021619331792:android:a70acb16dcc31ea6",
+        "android_client_info": {
+          "package_name": "martin.sms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021619331792-t3nuuh8pur8p11s19kvm9dfomh894784.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "martin.sms",
+            "certificate_hash": "7c363354bd3ae38b1043f983edaeb88533de6bc3"
+          }
+        },
+        {
+          "client_id": "1021619331792-6tv5giidj02sjtkku3f49e33uqiqa080.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrqiKYDM8bKaeLhoKYtIHFQhmsOHS8398"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021619331792-6tv5giidj02sjtkku3f49e33uqiqa080.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

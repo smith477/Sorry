@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="5">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:weightSum="3">
+
+    <TextView
+        android:id="@+id/student_index"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_weight="1"
+        android:text="15206"/>
+
+    <TextView
+        android:id="@+id/student_ime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_weight="1"
+        android:text="Martin"/>
+
+    <TextView
+        android:id="@+id/student_prezime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_weight="1"
+        android:text="Marinkovic"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="4"
+        android:weightSum="2">
+
+    <TextView
+        android:id="@+id/student_numOfClasses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:text="45"/>
+
+    <TextView
+        android:id="@+id/subject_maxNumOfClasses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:text="50"/>
+
+    </LinearLayout>
+
+</LinearLayout>

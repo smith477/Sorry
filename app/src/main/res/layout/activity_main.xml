@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Student.MainActivity">
+
+    <Button
+        android:id="@+id/map"
+        style="?android:textAppearanceSmall"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Show map"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="408dp"
+        android:layout_above="@+id/remove_user"
+        android:layout_alignStart="@+id/sign_out" />
+
+    <Button
+        android:id="@+id/remove_user"
+        style="?android:textAppearanceSmall"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/remove_user"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="408dp"
+        android:layout_above="@+id/sign_out"
+        android:layout_alignStart="@+id/sign_out" />
+
+    <Button
+        android:id="@+id/sign_out"
+        style="?android:textAppearanceSmall"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="@string/btn_sign_out"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="456dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

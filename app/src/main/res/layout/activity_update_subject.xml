@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.UpdateSubject"
+    android:background="@drawable/pozadina2">
+
+    <EditText
+        android:id="@+id/subject_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Subject number"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/subject_name"/>
+
+    <EditText
+        android:id="@+id/subject_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Subject name"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/subject_maxNumOfClasses"/>
+
+    <EditText
+        android:id="@+id/subject_maxNumOfClasses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Max. num of classes"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/subject_code"/>
+
+    <EditText
+        android:id="@+id/subject_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Code"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/btn_update_subject"/>
+
+    <Button
+        android:id="@+id/btn_update_subject"
+        style="?android:textAppearanceSmall"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text= "update"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="312dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btn_delete_subject"/>
+
+    <Button
+        android:id="@+id/btn_delete_subject"
+        style="?android:textAppearanceSmall"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="delete"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="456dp"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

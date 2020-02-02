@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Professor.ProfileActivityProfessor">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/pozadina"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:text="00:00"
+            android:textAlignment="center"
+            android:textSize="70sp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="50dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:background="@drawable/rounded_corner"
+            android:id="@+id/view_code"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="50dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"/>
+
+        <Button
+            android:id="@+id/btn_get_code"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@color/colorAccent"
+            android:text="Get code"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btn_show_evidence"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@color/colorAccent"
+            android:text="show evidence"
+            android:textColor="@android:color/black"
+            android:layout_above="@+id/sign_out"/>
+
+        <Button
+            android:id="@+id/btn_sign_out"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@color/colorAccent"
+            android:text="sign out"
+            android:textColor="@android:color/black"
+            android:layout_above="@+id/sign_out"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

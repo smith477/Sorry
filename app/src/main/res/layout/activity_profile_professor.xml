@@ -83,6 +83,15 @@
             android:text="show evidence"
             android:textColor="@android:color/black" />
 
+        <Button
+            android:id="@+id/btn_delete_subject"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/sign_out"
+            android:layout_marginTop="20dip"
+            android:background="@color/colorAccent"
+            android:src="@drawable/exit"
+            android:textColor="@android:color/black" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

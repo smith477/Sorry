@@ -36,7 +36,7 @@ import martin.sms.Student.ProfileActivityStudent;
 public class ProfileActivityProfessor extends AppCompatActivity {
 
     private TextView tvCode, tvTimer;
-    private Button btnGetCode, btnShowEvidence, btnSignOut, btnStartTimer;
+    private Button btnGetCode, btnShowEvidence, btnSignOut, btnStartTimer, btnExitSubject;
     private FirebaseAuth auth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseAuth.AuthStateListener authListener;
@@ -136,6 +136,14 @@ public class ProfileActivityProfessor extends AppCompatActivity {
             }
         });
 
+        btnExitSubject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteSubject(subjectID);
+                finish();
+            }
+        });
+
         btnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -176,6 +184,10 @@ public class ProfileActivityProfessor extends AppCompatActivity {
         };
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+    }
+
+    public void deleteSubject(String id){
+        myRef.child(id).removeValue();
     }
 
     public void reverseTimer(int Seconds,final TextView tv){

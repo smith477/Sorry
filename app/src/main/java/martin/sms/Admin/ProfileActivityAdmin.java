@@ -19,7 +19,7 @@ import martin.sms.Student.MainActivity;
 
 public class ProfileActivityAdmin extends AppCompatActivity {
 
-    Button btnUpdateStudent, btnUpdateProfessor, btnAddSubject, btnSignOut, btnUpdateSubject;
+    Button btnUpdateStudent, btnUpdateProfessor, btnAddSubject, btnSignOut, btnUpdateSubject, btnSubject;
     private FirebaseAuth auth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseAuth.AuthStateListener authListener;
@@ -35,6 +35,7 @@ public class ProfileActivityAdmin extends AppCompatActivity {
         btnAddSubject = (Button) findViewById(R.id.add_subject);
         btnSignOut = (Button)findViewById(R.id.btn_sign_out);
         btnUpdateSubject = (Button)findViewById(R.id.update_subject);
+        btnSubject = (Button)findViewById(R.id.btn_Subjects);
 
         setupFirebaseAuth();
 
@@ -48,6 +49,13 @@ public class ProfileActivityAdmin extends AppCompatActivity {
                 }
             }
         };
+
+        btnSubject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivityAdmin.this, AdminAllSubjectList.class));
+            }
+        });
 
         btnUpdateStudent.setOnClickListener(new View.OnClickListener() {
             @Override

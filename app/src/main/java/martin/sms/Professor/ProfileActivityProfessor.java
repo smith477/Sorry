@@ -95,6 +95,17 @@ public class ProfileActivityProfessor extends AppCompatActivity {
                 tvCode.setText(randomString);
                 //reverseTimer(30, tvTimer); //Ovo treba da se veze za neko dugme "Start"
 
+                btnGetCode.setEnabled(false);
+                btnStartTimer.setEnabled(true);
+            }
+        });
+
+        btnStartTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                reverseTimer(30, tvTimer); //Ovo treba da se veze za neko dugme "Start"
+
                 myRef.child("subjects")
                         .child(subjectID)
                         .child("kod")
@@ -110,16 +121,6 @@ public class ProfileActivityProfessor extends AppCompatActivity {
                         .child("longitude")
                         .setValue(longitude);
 
-                btnGetCode.setEnabled(false);
-                btnStartTimer.setEnabled(true);
-            }
-        });
-
-        btnStartTimer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                reverseTimer(30, tvTimer); //Ovo treba da se veze za neko dugme "Start"
                 btnStartTimer.setEnabled(false);
 
             }
@@ -191,7 +192,7 @@ public class ProfileActivityProfessor extends AppCompatActivity {
             }
 
             public void onFinish() {
-                btnGetCode.setClickable(true);
+                btnGetCode.setEnabled(true);
                 tv.setText("Completed");
                 myRef.child("subjects")
                         .child(subjectID)

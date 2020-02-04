@@ -16,18 +16,22 @@ public class Subject implements Parcelable {
     private String fond_casova;
     private String tr_broj_casova;
     private String subjectID;
+    private String godina;
+    private String smer;
     private double latitude;
     private double longitude;
 
     public Subject() {
     }
 
-    public Subject(String sifra, String naziv, String kod, String fond_casova, String subjectID) {
+    public Subject(String sifra, String naziv, String kod, String fond_casova, String subjectID, String godina, String smer) {
         this.sifra = sifra;
         this.naziv = naziv;
         this.kod = kod;
         this.fond_casova = fond_casova;
         this.subjectID = subjectID;
+        this.godina = godina;
+        this.smer = smer;
     }
 
     protected Subject(Parcel in) {
@@ -37,6 +41,8 @@ public class Subject implements Parcelable {
         fond_casova = in.readString();
         tr_broj_casova = in.readString();
         subjectID = in.readString();
+        godina = in.readString();
+        smer = in.readString();
     }
 
     public static final Creator<Subject> CREATOR = new Creator<Subject>() {
@@ -56,7 +62,7 @@ public class Subject implements Parcelable {
         this.longitude = longitude;
     }
 
-    public Subject(String sifra, String naziv, String kod, String fond_casova, String subjectID, double latitude, double longitude) {
+    public Subject(String sifra, String naziv, String kod, String fond_casova, String subjectID, double latitude, double longitude, String godina, String smer) {
         this.sifra = sifra;
         this.naziv = naziv;
         this.kod = kod;
@@ -64,6 +70,8 @@ public class Subject implements Parcelable {
         this.subjectID = subjectID;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.godina = godina;
+        this.smer = smer;
     }
 
     public static Creator<Subject> getCREATOR() {
@@ -131,6 +139,8 @@ public class Subject implements Parcelable {
         parcel.writeString(fond_casova);
         parcel.writeString(tr_broj_casova);
         parcel.writeString(subjectID);
+        parcel.writeString(godina);
+        parcel.writeString(smer);
     }
 
     public double getLatitude() {
@@ -148,4 +158,12 @@ public class Subject implements Parcelable {
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
+
+    public String getGodina () {return godina;}
+
+    public void setGodina (String godina) {this.godina = godina;}
+
+    public String getSmer () {return smer;}
+
+    public void setSmer (String smer) {this.smer = smer;}
 }

@@ -5,8 +5,10 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,6 +32,7 @@ public class UpdateSubject extends AppCompatActivity {
 
     private EditText etSbject_number, etSubjectName, etSubjectMaxNumOfClasses, etSubjectCode;
     private Button btnUpdateSubject, btnDeleteSubject;
+    private Spinner btnGodina, btnSmer;
     private FirebaseAuth auth;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference myRef;
@@ -59,6 +62,18 @@ public class UpdateSubject extends AppCompatActivity {
         etSubjectCode = (EditText) findViewById(R.id.subject_code);
         btnUpdateSubject = (Button) findViewById(R.id.btn_update_subject);
         btnDeleteSubject = (Button) findViewById(R.id.btn_delete_subject);
+        btnGodina = (Spinner) findViewById(R.id.godina);
+        btnSmer = (Spinner) findViewById(R.id.smer);
+
+        Spinner dropdownGodina = findViewById(R.id.godina);
+        String[] itemsGodina = new String[]{"1", "2", "3", "4"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, itemsGodina);
+        dropdownGodina.setAdapter(adapter);
+
+        Spinner dropdownSmer = findViewById(R.id.smer);
+        String[] itemsSmer = new String[]{"Opšti", "RII", "EKM", "US", "Elektroenergetika", "E", "T"};
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, itemsSmer);
+        dropdownSmer.setAdapter(adapter1);
 
         findSubject(subjectName);
 
@@ -69,6 +84,8 @@ public class UpdateSubject extends AppCompatActivity {
                 String newSubjectName = etSubjectName.getText().toString();
                 String newSubjectMaxNumOfClasses = etSubjectMaxNumOfClasses.getText().toString();
                 String newSubjectCode = etSubjectCode.getText().toString();
+                String newSubjectGodina = btnGodina.getSelectedItem().toString();
+                String newSubjectSmer = btnSmer.getSelectedItem().toString();
 
                 if(!updateSubject.getSifra().equals(newSubjectNumber)){
 
@@ -102,7 +119,23 @@ public class UpdateSubject extends AppCompatActivity {
                             .setValue(newSubjectCode);
                 }
 
-                newSubject = new Subject(newSubjectNumber,newSubjectName,newSubjectCode,newSubjectMaxNumOfClasses,subjectID);
+                if(!updateSubject.getGodina().equals(newSubjectGodina)){
+
+                    myRef.child("subjects")
+                            .child(subjectID)
+                            .child("godina")
+                            .setValue(newSubjectGodina);
+                }
+
+                if(!updateSubject.getSmer().equals(newSubjectSmer)){
+
+                    myRef.child("subjects")
+                            .child(subjectID)
+                            .child("smer")
+                            .setValue(newSubjectSmer);
+                }
+
+                newSubject = new Subject(newSubjectNumber,newSubjectName,newSubjectCode,newSubjectMaxNumOfClasses,subjectID, newSubjectGodina, newSubjectSmer);
 
                 updateStudentNode();
                 updateProfessorNode();

@@ -49,6 +49,8 @@
         <activity android:name=".Admin.AddSubjectToProfessor" />
         <activity android:name=".Admin.FindSubjectByName" />
         <activity android:name=".Admin.UpdateSubject" />
+        <activity android:name=".Admin.AdminAllSubjectList"/>
+        <activity android:name=".Admin.AdminSubjectListAdapter"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

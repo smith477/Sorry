@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Professor.ProfessorAllSubjectListAdapter"
+    android:weightSum="5">
+
+    <LinearLayout
+        android:layout_width="284dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/godina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="God"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/smer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Smer"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/predmet"
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Predmet"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="310dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+
+        <Button
+            android:id="@+id/studenti"
+            android:layout_width="68dp"
+            android:layout_height="match_parent"
+            android:textSize="5dp"
+            android:text="Studenti" />
+
+        <Button
+            android:id="@+id/profesori"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="5dp"
+            android:text="Profesori" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

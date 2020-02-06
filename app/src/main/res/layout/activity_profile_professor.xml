@@ -85,7 +85,7 @@
 
         <Button
             android:id="@+id/btn_delete_subject"
-            android:layout_width="104dp"
+            android:layout_width="157dp"
             android:layout_height="wrap_content"
             android:layout_above="@+id/sign_out"
             android:layout_marginTop="20dip"

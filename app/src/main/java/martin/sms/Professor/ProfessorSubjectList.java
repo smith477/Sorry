@@ -76,6 +76,7 @@ public class ProfessorSubjectList extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(ProfessorSubjectList.this, ProfileActivityProfessor.class);
                 intent.putExtra("subjectID", keyList.get(i));
+                intent.putExtra("professorID", userID);
                 startActivity(intent);
             }
         });

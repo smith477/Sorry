@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "165353705806-860d9n5gv1mbvgsupshsbo52pktv9eqe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "martin.sms",
+            "certificate_hash": "9d9db1ce824db2f71b43fbb231719f6672bdc1c8"
+          }
+        },
+        {
           "client_id": "165353705806-o968drmr4mk8udu2rvruph10rihoo3kn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

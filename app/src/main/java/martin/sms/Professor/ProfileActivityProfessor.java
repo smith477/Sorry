@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import java.io.IOException;
 import java.util.List;
@@ -42,6 +43,7 @@ public class ProfileActivityProfessor extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authListener;
     private DatabaseReference myRef;
     String subjectID;
+    String professorID;
     String randomString;
     private static final String ALLOWED_CHARACTERS ="0123456789qwertyuiopasdfghjklzxcvbnm";
 
@@ -77,15 +79,17 @@ public class ProfileActivityProfessor extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
-        if(bundle != null)
+        if(bundle != null) {
             subjectID = bundle.getString("subjectID");
-
+            professorID = bundle.getString("professorID");
+        }
         tvCode = (TextView)findViewById(R.id.view_code);
         tvTimer = (TextView)findViewById(R.id.tvTimer);
         btnGetCode = (Button)findViewById(R.id.btn_get_code);
         btnShowEvidence = (Button)findViewById(R.id.btn_show_evidence);
         btnSignOut = (Button)findViewById(R.id.btn_sign_out);
         btnStartTimer = (Button) findViewById(R.id.btn_start_timer);
+        btnExitSubject = (Button) findViewById(R.id.btn_delete_subject);
         btnStartTimer.setEnabled(false);
 
         btnGetCode.setOnClickListener(new View.OnClickListener() {
@@ -125,8 +129,6 @@ public class ProfileActivityProfessor extends AppCompatActivity {
             }
         });
 
-
-
         btnShowEvidence.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -136,11 +138,13 @@ public class ProfileActivityProfessor extends AppCompatActivity {
             }
         });
 
+        subjectID = bundle.getString("subjectID");
         btnExitSubject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                deleteSubject(subjectID);
-                finish();
+                deleteSubject(professorID, subjectID);
+                Intent intent = new Intent(ProfileActivityProfessor.this, ProfessorSubjectList.class);
+                startActivity(intent);
             }
         });
 
@@ -186,8 +190,19 @@ public class ProfileActivityProfessor extends AppCompatActivity {
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
     }
 
-    public void deleteSubject(String id){
-        myRef.child(id).removeValue();
+    public void deleteSubject(String idP, String idS){
+
+        myRef = FirebaseDatabase.getInstance()
+                    .getReference()
+                    .child("professors")
+                    .child(idP)
+                    .child("subjects")
+                    .child(idS);
+
+//        Toast.makeText(this, myRef.toString(), Toast.LENGTH_LONG).show();
+        myRef.removeValue();
+
+        Toast.makeText(this, "Napustili ste predmet", Toast.LENGTH_LONG).show();
     }
 
     public void reverseTimer(int Seconds,final TextView tv){

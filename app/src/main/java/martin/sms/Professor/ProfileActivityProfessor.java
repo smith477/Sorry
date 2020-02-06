@@ -203,6 +203,14 @@ public class ProfileActivityProfessor extends AppCompatActivity {
 //        Toast.makeText(this, myRef.toString(), Toast.LENGTH_LONG).show();
         myRef.removeValue();
 
+        myRef = FirebaseDatabase.getInstance()
+                .getReference()
+                .child("subjects")
+                .child(idS)
+                .child("professors")
+                .child(idP);
+
+        myRef.removeValue();
         Toast.makeText(this, "Napustili ste predmet", Toast.LENGTH_LONG).show();
     }
 

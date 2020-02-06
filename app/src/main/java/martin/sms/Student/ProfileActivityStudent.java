@@ -36,19 +36,22 @@ import java.util.List;
 import java.util.Map;
 
 import martin.sms.Admin.UpdateStudent;
+import martin.sms.LoginActivity;
+import martin.sms.Professor.ProfileActivityProfessor;
 import martin.sms.R;
 import martin.sms.Subject;
 
 public class ProfileActivityStudent extends AppCompatActivity {
 
     private EditText inputCode;
-    private Button btnSubmit;
+    private Button btnSubmit, btnDelete;
     private String code;
     private FirebaseAuth auth;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference myRef;
     String subjectID;
     String userID;
+    String studentID;
     boolean present;
     public int currentNum;
 
@@ -86,7 +89,7 @@ public class ProfileActivityStudent extends AppCompatActivity {
 
         btnSubmit = (Button) findViewById(R.id.btn_submit);
         inputCode = (EditText) findViewById(R.id.enter_code);
-
+        btnDelete = (Button) findViewById(R.id.btn_delete);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,7 +107,18 @@ public class ProfileActivityStudent extends AppCompatActivity {
             }
         });
 
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteSubject(userID, subjectID);
+                Intent intent = new Intent(ProfileActivityStudent.this, StudentSubjectList.class);
+                startActivity(intent);
+            }
+        });
+
         getCurrentNumOfClasses(userID);
+
+
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this,
@@ -138,6 +152,27 @@ public class ProfileActivityStudent extends AppCompatActivity {
         };
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+    }
+
+    public void deleteSubject(String idU, String idS){
+        myRef = FirebaseDatabase.getInstance()
+                .getReference()
+                .child("students")
+                .child(idU)
+                .child("subjects")
+                .child(idS);
+
+        myRef.removeValue();
+        myRef = FirebaseDatabase.getInstance()
+                .getReference()
+                .child("subjects")
+                .child(idS)
+                .child("students")
+                .child(idU);
+
+        myRef.removeValue();
+        Toast.makeText(this, "Napustili ste predmet", Toast.LENGTH_LONG).show();
+
     }
 
     @Override

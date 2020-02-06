@@ -32,6 +32,15 @@
             android:text="submit"
             android:textColor="@android:color/black" />
 
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@color/colorAccent"
+            android:src="@drawable/exit"
+            android:textColor="@android:color/black" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

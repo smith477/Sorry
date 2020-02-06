@@ -57,6 +57,16 @@ public class AdminSubjectListAdapter extends ArrayAdapter<Subject> {
             }
         });
 
+        Button students = (Button) listView.findViewById(R.id.studenti);
+        students.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), AllStudentsBySubject.class);
+                intent.putExtra("subjectID", subjectId.getText());
+                view.getContext().startActivity(intent);
+            }
+        });
+
         return listView;
     }
 }

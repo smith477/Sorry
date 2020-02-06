@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
     private String currentUserID;
     boolean isUserLoggedIn;
     private static final String TAG = "LoginActivity";
+    private String t = "TAG";
 
     View loadingHolder;
     AVLoadingIndicatorView avi;
@@ -114,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void checkUser(final String userID){
 
-        Query queryProf = FirebaseDatabase.getInstance().getReference()
+        final Query queryProf = FirebaseDatabase.getInstance().getReference()
                 .child("professors")
                 .orderByChild("profesorID")
                 .equalTo(userID);
@@ -128,9 +129,11 @@ public class LoginActivity extends AppCompatActivity {
                     currentUserID = profesor.getProfesorID();
                     if(!currentUserID.isEmpty()) {
                         if(isUserLoggedIn) {
+                            //Log.d(t, String.valueOf(singleSnapshot.child("subjects").hasChildren()));
                             startActivity(new Intent(LoginActivity.this, ProfessorSubjectList.class));
                             finish();
                         }else{
+                            //Log.d(t, String.valueOf(singleSnapshot.child("subjects").hasChildren()));
                             startActivity(new Intent(LoginActivity.this, ProfessorAllSubjectList.class));
                             finish();
                         }
@@ -143,6 +146,8 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+
 
         Query queryStudent = FirebaseDatabase.getInstance().getReference()
                 .child("students")

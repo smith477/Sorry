@@ -55,6 +55,15 @@
             android:textColor="@android:color/black" />
 
         <Button
+            android:id="@+id/btn_Subjects"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@color/colorAccent"
+            android:text="Subjects"
+            android:textColor="@android:color/black" />
+
+        <Button
             android:id="@+id/btn_sign_out"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

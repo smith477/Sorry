@@ -39,6 +39,15 @@
             android:text="Predmet"
             android:textSize="18dp" />
 
+        <TextView
+            android:id="@+id/idPredmet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="id"
+            android:visibility="invisible"
+            android:textSize="0pt" />
+
     </LinearLayout>
 
     <LinearLayout

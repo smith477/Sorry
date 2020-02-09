@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import martin.sms.Professor.ProfessorAllSubjectList;
 import martin.sms.Professor.ProfessorSubjectList;
 import martin.sms.Professor.ProfileActivityProfessor;
 import martin.sms.R;
@@ -34,11 +36,13 @@ public class StudentSubjectList extends AppCompatActivity {
     private String userID;
     private FirebaseAuth auth;
     int backButtonCount = 0;
+    Button btnChoseSubject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_subject_list);
+        btnChoseSubject = (Button) findViewById(R.id.btn_chose_subject_student);
 
         auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null) {
@@ -48,6 +52,14 @@ public class StudentSubjectList extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.listview);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, list);
         listview.setAdapter(adapter);
+
+        btnChoseSubject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(StudentSubjectList.this, AllSubjectsList.class);
+                startActivity(myIntent);
+            }
+        });
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         Query query = reference

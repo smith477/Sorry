@@ -134,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                         }else{
                             //Log.d(t, String.valueOf(singleSnapshot.child("subjects").hasChildren()));
-                            startActivity(new Intent(LoginActivity.this, ProfessorAllSubjectList.class));
+                            startActivity(new Intent(LoginActivity.this, ProfessorSubjectList.class));
                             finish();
                         }
                     }
@@ -167,7 +167,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(new Intent(LoginActivity.this, StudentSubjectList.class));
                             finish();
                         }else{
-                            startActivity(new Intent(LoginActivity.this, AllSubjectsList.class));
+                            startActivity(new Intent(LoginActivity.this, StudentSubjectList.class));
                             finish();
                             auth.getCurrentUser().updatePassword("password")
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {

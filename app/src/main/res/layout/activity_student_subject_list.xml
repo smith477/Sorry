@@ -14,4 +14,16 @@ tools:context=".Student.StudentSubjectList"
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true"
     android:layout_marginBottom="11dp" />
+    <Button
+        android:id="@+id/btn_chose_subject_student"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Izaberite predmet"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="456dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

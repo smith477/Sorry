@@ -50,7 +50,7 @@ public class AdminAllSubjectList extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         myRef = firebaseDatabase.getReference();
 
-        //Button ok = (Button) findViewById(R.id.btnOk);
+
         listView = findViewById(R.id.listview);
         subjectList = new ArrayList<>();
 
@@ -99,8 +99,12 @@ public class AdminAllSubjectList extends AppCompatActivity {
 
             }
         });
-
-
+        Button ok = (Button) findViewById(R.id.btnOk);
+        ok.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, ProfileActivityAdmin.class);
+            startActivity(intent);
+        });
     }
+
 
 }

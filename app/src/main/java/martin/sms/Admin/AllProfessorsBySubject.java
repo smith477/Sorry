@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -73,6 +74,7 @@ public class AllProfessorsBySubject extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for ( DataSnapshot singleSnapshot :  dataSnapshot.getChildren()){
                     Profesor professor = singleSnapshot.getValue(Profesor.class);
+                    professor.setProfesorID(singleSnapshot.getKey());
                     professorList.add(professor);
                 }
 
@@ -82,7 +84,7 @@ public class AllProfessorsBySubject extends AppCompatActivity {
                 query.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        ProfessorsBySubjectListAdapter adapter = new ProfessorsBySubjectListAdapter(AllProfessorsBySubject.this, professorList);
+                        ProfessorsBySubjectListAdapter adapter = new ProfessorsBySubjectListAdapter(AllProfessorsBySubject.this, professorList, subjectID);
                         listView.setAdapter(adapter);
                     }
 
@@ -99,7 +101,11 @@ public class AllProfessorsBySubject extends AppCompatActivity {
             }
         });
 
-
+        Button ok = (Button) findViewById(R.id.btnOk);
+        ok.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, AdminAllSubjectList.class);
+            startActivity(intent);
+        });
     }
 
 }

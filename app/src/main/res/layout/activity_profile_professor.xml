@@ -90,7 +90,7 @@
             android:layout_above="@+id/sign_out"
             android:layout_marginTop="20dip"
             android:background="@color/colorAccent"
-            android:src="@drawable/exit"
+            android:text="Unenrol"
             android:textColor="@android:color/black" />
     </LinearLayout>
 
